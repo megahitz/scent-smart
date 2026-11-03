@@ -1,0 +1,62 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Scent Smart",
+        "description": "Add a Scent GAS-501F diffuser. Enter the BLE address shown in the device's advertisement (name starts with 'Scent-').",
+        "data": {
+          "ble_address": "BLE address",
+          "friendly_name": "Friendly name"
+        }
+      }
+    },
+    "error": {
+      "invalid_ble_address": "Invalid Bluetooth address (expected 6 pairs of hex digits, e.g. 54:6C:50:5E:C3:6F)."
+    },
+    "abort": {
+      "already_configured": "This device is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Scent Smart options",
+        "data": {
+          "default_spray_duration": "Default spray duration (seconds, 5–200)",
+          "default_pause_time": "Default pause time (seconds, 20–300)",
+          "default_window_start": "Default window start (HH:MM or minutes)",
+          "default_window_stop": "Default window stop (HH:MM or minutes)",
+          "active_program": "Active program (1–5)",
+          "oneshot_spray_duration": "Spray-now duration (seconds, 5–200)"
+        }
+      },
+      "error": {
+        "invalid_time": "Invalid time; use HH:MM or minutes of day."
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "working_mode": "Working mode",
+      "fan": "Fan",
+      "child_lock": "Child lock",
+      "program_enabled": "Program {program} enabled"
+    },
+    "button": {
+      "spray_now": "Spray now"
+    },
+    "number": {
+      "spray_duration": "Spray duration",
+      "pause_time": "Pause time"
+    },
+    "select": {
+      "active_program": "Active program"
+    },
+    "sensor": {
+      "state": "State"
+    },
+    "light": {
+      "ambient_light": "Ambient light"
+    }
+  }
+}

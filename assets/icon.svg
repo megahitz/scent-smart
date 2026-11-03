@@ -1,0 +1,46 @@
+<svg width="512" height="512" viewBox="0 0 512 512" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#141828"/>
+      <stop offset="1" stop-color="#232848"/>
+    </linearGradient>
+    <linearGradient id="aroma" x1="0" y1="1" x2="0" y2="0">
+      <stop offset="0" stop-color="#2dd4bf"/>
+      <stop offset="1" stop-color="#a78bfa"/>
+    </linearGradient>
+    <linearGradient id="body" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#e8eaf2"/>
+      <stop offset="0.5" stop-color="#c3c8d8"/>
+      <stop offset="1" stop-color="#9aa1b8"/>
+    </linearGradient>
+  </defs>
+
+  <!-- fundo -->
+  <rect x="16" y="16" width="480" height="480" rx="104" fill="url(#bg)"/>
+
+  <!-- ondas de aroma: nascem do bocal, em S suave -->
+  <g fill="none" stroke="url(#aroma)" stroke-linecap="round">
+    <path d="M 222 208 C 200 172, 214 140, 200 108" stroke-width="14"/>
+    <path d="M 256 198 C 256 160, 246 132, 250 92" stroke-width="16"/>
+    <path d="M 290 208 C 312 172, 298 140, 312 108" stroke-width="14"/>
+  </g>
+
+  <!-- bocal -->
+  <ellipse cx="256" cy="222" rx="44" ry="12" fill="#f2f4fa"/>
+  <rect x="212" y="222" width="88" height="30" rx="12" fill="url(#body)"/>
+
+  <!-- corpo do difusor -->
+  <ellipse cx="256" cy="262" rx="80" ry="17" fill="#f2f4fa"/>
+  <path d="M 176 266 C 176 250, 200 244, 256 244 C 312 244, 336 250, 336 266
+           L 328 386 C 326 402, 296 412, 256 412 C 216 412, 186 402, 184 386 Z"
+        fill="url(#body)"/>
+
+  <!-- LED do status -->
+  <circle cx="256" cy="332" r="17" fill="#2dd4bf">
+    <animate attributeName="opacity" values="1;0.35;1" dur="1.6s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="256" cy="332" r="26" fill="none" stroke="#2dd4bf" stroke-width="4" opacity="0.45"/>
+
+  <!-- sombra -->
+  <ellipse cx="256" cy="418" rx="72" ry="12" fill="#0b0e1a" opacity="0.6"/>
+</svg>

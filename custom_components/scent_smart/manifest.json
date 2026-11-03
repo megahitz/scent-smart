@@ -1,0 +1,17 @@
+{
+  "domain": "scent_smart",
+  "name": "Scent Smart",
+  "version": "0.1.0",
+  "codeowners": ["@custom"],
+  "config_flow": true,
+  "dependencies": [],
+  "documentation": "https://github.com/local/scent_smart",
+  "integration_type": "device",
+  "iot_class": "assumed_state",
+  "issue_tracker": "https://github.com/local/scent_smart/issues",
+  "requirements": ["bleak>=0.21.0"],
+  "bluetooth": [
+    {"local_name": "Scent-*"}
+  ],
+  "loggers": ["bleak"]
+}

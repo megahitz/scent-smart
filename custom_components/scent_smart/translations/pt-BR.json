@@ -1,0 +1,62 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Scent Smart",
+        "description": "Adicione um difusor Scent GAS-501F. Informe o endereço BLE anunciado pelo aparelho (nome começa com 'Scent-').",
+        "data": {
+          "ble_address": "Endereço BLE",
+          "friendly_name": "Nome amigável"
+        }
+      }
+    },
+    "error": {
+      "invalid_ble_address": "Endereço Bluetooth inválido (esperado 6 pares hex, ex.: 54:6C:50:5E:C3:6F)."
+    },
+    "abort": {
+      "already_configured": "Este aparelho já está configurado."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Opções do Scent Smart",
+        "data": {
+          "default_spray_duration": "Duração padrão da borrifada (segundos, 5–200)",
+          "default_pause_time": "Pausa padrão (segundos, 20–300)",
+          "default_window_start": "Início da janela padrão (HH:MM ou minutos)",
+          "default_window_stop": "Fim da janela padrão (HH:MM ou minutos)",
+          "active_program": "Programa ativo (1–5)",
+          "oneshot_spray_duration": "Duração do 'borrifar agora' (segundos, 5–200)"
+        }
+      },
+      "error": {
+        "invalid_time": "Hora inválida; use HH:MM ou minutos do dia."
+      }
+    }
+  },
+  "entity": {
+    "switch": {
+      "working_mode": "Modo de funcionamento",
+      "fan": "Ventilador",
+      "child_lock": "Bloqueio infantil",
+      "program_enabled": "Programa {program} ativo"
+    },
+    "button": {
+      "spray_now": "Borrifar agora"
+    },
+    "number": {
+      "spray_duration": "Duração da borrifada",
+      "pause_time": "Tempo de pausa"
+    },
+    "select": {
+      "active_program": "Programa ativo"
+    },
+    "sensor": {
+      "state": "Estado"
+    },
+    "light": {
+      "ambient_light": "Luz ambiente"
+    }
+  }
+}
