@@ -1,6 +1,6 @@
 # Scent Smart — Home Assistant custom integration
 
-BLE control for the **Scent GAS-501F aroma diffuser** (app: YooAI ScentLife).
+BLE control for the **Scent GAS-501F aroma diffuser** (Scent/YooAI).
 Protocol validated end-to-end on 2026-11-02 (ACK + state dump + official app).
 
 ## Installation

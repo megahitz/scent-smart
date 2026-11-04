@@ -1,4 +1,4 @@
-# Protocolo BLE — Difusor GAS-501F (app com.yooai.scentlife v47)
+# Protocolo BLE — Difusor GAS-501F
 
 Canal único: FFE1 (serviço FFE0).
 
