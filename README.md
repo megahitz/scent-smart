@@ -6,7 +6,7 @@
 
 Controle local de difusores de aromas BLE **Scent / YooAI (GAS-501F e família)** no Home Assistant — sem app do fabricante, sem nuvem, sem limites artificiais.
 
-> Protocolo BLE decodificado por engenharia reversa do app oficial (com.yooai.scentlife) e validado ponta a ponta contra o aparelho e o app.
+> Testado ponta a ponta com o difusor Scent-B501F (GAS-501F), incluindo validação contra o app oficial.
 
 ## Instalação
 

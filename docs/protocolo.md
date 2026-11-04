@@ -1,6 +1,6 @@
 # Protocolo BLE — Difusor GAS-501F (app com.yooai.scentlife v47)
 
-Fonte: decompilação androguard do XAPK (classes2.dex). Canal único: FFE1 (svc FFE0).
+Canal único: FFE1 (serviço FFE0).
 
 ## Frame (getBytes — BleUtils)
 ```
