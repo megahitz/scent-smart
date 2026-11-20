@@ -1,5 +1,7 @@
 # Notas de protocolo — GAS-501F
 
+[English](protocol.md) | **Português (Brasil)**
+
 Informações aplicáveis ao aparelho testado. Não é uma especificação para todos os difusores BLE.
 
 - Serviço `FFE0`, característica `FFE1`; mensagens são enviadas por escrita sem resposta e recebidas por notificação.

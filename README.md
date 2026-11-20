@@ -2,45 +2,47 @@
 
 # Scent Smart
 
-Integração Bluetooth local para Home Assistant. Testada com um difusor **Scent-B501F (GAS-501F)**. A compatibilidade com outros modelos não foi verificada.
+**English** | [Português (Brasil)](README.pt-BR.md)
 
-## Instalação
+A local Bluetooth integration for Home Assistant, tested with a **Scent-B501F (GAS-501F)** diffuser. Compatibility with other models has not been verified.
 
-**HACS:** em Integrações → Repositórios personalizados, adicione `https://github.com/megahitz/scent-smart` como integração. Instale **Scent Smart** e reinicie o Home Assistant.
+## Installation
 
-**Manual:** copie `custom_components/scent_smart/` para `/config/custom_components/scent_smart/` e reinicie o Home Assistant.
+**HACS:** under Integrations → Custom repositories, add `https://github.com/megahitz/scent-smart` as an integration. Install **Scent Smart** and restart Home Assistant.
 
-Depois, em Configurações → Dispositivos e serviços → Adicionar integração, escolha **Scent Smart** e informe o endereço Bluetooth do aparelho. A descoberta automática não está disponível nesta versão.
+**Manual:** copy `custom_components/scent_smart/` to `/config/custom_components/scent_smart/` and restart Home Assistant.
 
-É necessário um adaptador Bluetooth ou proxy ESPHome com suporte a conexões ativas próximo ao aparelho. O dispositivo pode aceitar apenas uma conexão central de cada vez; encerre outros clientes Bluetooth antes de controlá-lo pelo Home Assistant.
+Then go to Settings → Devices & services → Add integration, select **Scent Smart**, and enter the device's Bluetooth address. Automatic discovery is not available in this version.
 
-## Entidades
+A nearby Bluetooth adapter or ESPHome proxy supporting active connections is required. The device may accept only one Bluetooth central connection at a time; close other Bluetooth clients before controlling it through Home Assistant.
 
-| Entidade | Função |
+## Entities
+
+| Entity | Purpose |
 |---|---|
-| Modo de Trabalho | Liga ou desliga o ciclo autônomo. |
-| Tempo de Borrifada | Altera o programa 1: 5–200 s, passo 5 s. |
-| Tempo de Pausa | Altera o programa 1: 20–300 s, passo 5 s. |
-| Borrifar Agora | Tenta iniciar uma borrifada usando o programa 1 existente. Veja as limitações abaixo. |
-| Estado | Última resposta de estado confirmada e atributos de diagnóstico. |
+| Working Mode | Turns the autonomous diffusion cycle on or off. |
+| Spray Duration | Changes program 1: 5–200 seconds, in 5-second increments. |
+| Pause Time | Changes program 1: 20–300 seconds, in 5-second increments. |
+| Spray Now | Attempts to start a spray using the existing program 1. See the limitations below. |
+| State | The last confirmed state response and diagnostic attributes. |
 
-Os demais controles legados de programa, ventilador, trava, iluminação e seleção de programa não estão disponíveis nesta versão. A janela horária já existente no aparelho é preservada, mas não pode ser editada aqui.
+Other legacy controls for programs, fan, lock, lighting, and program selection are unavailable in this version. The device's existing schedule is preserved but cannot be edited here.
 
-## Funcionamento e limitações
+## Behavior and limitations
 
-- A integração conecta apenas durante ações explícitas; **não há consulta no início nem polling**. A conexão ou um comando pode produzir bipes.
-- Depois de reiniciar o Home Assistant, o estado e os intervalos podem ficar como **desconhecidos** até uma ação retornar dados válidos. Valores anteriores podem ficar desatualizados se o aparelho for alterado por outro controle.
-- Alterar um intervalo consulta o programa existente, preserva seus outros campos e verifica os cinco programas após a escrita. Uma confirmação de recebimento por si só não é tratada como prova de alteração.
-- Se um comando expirar ou a conexão falhar após o envio, o resultado é **desconhecido**: o aparelho pode ter executado o comando. Verifique antes de repetir.
-- O botão de borrifada exige estado conhecido e programa 1 habilitado. Com o modo ligado, reaplica o programa; essa ação foi testada em um GAS-501F. Com o modo desligado, tenta ligá-lo temporariamente e desligá-lo após o tempo configurado. Esse fluxo completo não foi validado no aparelho; uma interrupção de energia ou falha de conexão pode impedir a restauração. Não use onde permanecer ligado seja problemático.
-- O aparelho mantém sua própria programação horária: remover uma restrição no Home Assistant não altera essa janela. Não há garantia de operação contínua durante o minuto final de uma janela encerrada em 23:59.
+- The integration connects only for explicit actions; **there is no startup query or polling**. Connecting or sending a command may cause the device to beep.
+- After Home Assistant restarts, the state and intervals may be **unknown** until an action returns valid data. Previously confirmed values can become stale if another control changes the device.
+- Changing an interval queries the existing program, preserves its other fields, and verifies all five programs after writing. An acknowledgement alone is not treated as proof of a change.
+- If a command times out or the connection fails after it is sent, the outcome is **unknown**: the device may have acted on it. Check before retrying.
+- Spray Now requires a known working mode and program 1 to be enabled. When the mode is on, it reapplies the program; this action was tested on a GAS-501F. When the mode is off, it attempts to turn the mode on temporarily and back off after the configured time. This complete flow has not been validated on the device; a power interruption or connection failure can prevent restoration. Do not use it where the device remaining on would be a problem.
+- The device retains its own schedule: removing a Home Assistant time restriction does not change that schedule. Continuous operation during the final minute of a schedule ending at 23:59 has not been established.
 
-## Testes offline
+## Offline tests
 
-Na raiz do repositório, execute:
+From the repository root, run:
 
 ```bash
 python3 -m unittest discover -s tests -v
 ```
 
-Os testes simulam Home Assistant e Bluetooth; não substituem testes no aparelho. Os detalhes de protocolo validados estão em [docs/protocolo.md](docs/protocolo.md).
+The tests simulate Home Assistant and Bluetooth; they do not replace testing on the device. See the [validated protocol notes](docs/protocol.md).

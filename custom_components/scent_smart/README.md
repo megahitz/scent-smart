@@ -1,7 +1,9 @@
 # Scent Smart
 
-Integração BLE local para Home Assistant, testada com o difusor GAS-501F.
+A local BLE integration for Home Assistant, tested with a GAS-501F diffuser.
 
-Veja a [documentação do projeto](https://github.com/megahitz/scent-smart) para instalação, entidades, testes e limitações. A integração usa conexões sob demanda; após reiniciar o Home Assistant, os estados podem permanecer desconhecidos até uma ação obter resposta válida.
+See the [project documentation](https://github.com/megahitz/scent-smart) for installation, entities, tests, and limitations. A [Portuguese version](https://github.com/megahitz/scent-smart/blob/main/README.pt-BR.md) is also available.
 
-O botão de borrifada exige estado conhecido e programa 1 habilitado. O fluxo de borrifada com o modo desligado não foi validado ponta a ponta no aparelho e uma falha pode impedir o retorno ao estado anterior.
+The integration connects on demand; after Home Assistant restarts, states may remain unknown until an action receives a valid response.
+
+Spray Now requires a known working mode and program 1 to be enabled. The complete spray flow with the mode off has not been validated on the device, and a failure can prevent restoration of the previous state.
