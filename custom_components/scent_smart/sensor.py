@@ -24,13 +24,9 @@ class ScentSmartStateSensor(ScentSmartEntity, SensorEntity):
         st = self.state_obj
         if not st:
             return None
-        running = st.running
-        timer = st.active_timer
-        if running is True:
-            return "Running"
-        if running is False and timer is not None and timer.enable:
-            return "Idle"
-        return "Off"
+        if st.running is None:
+            return None
+        return "Running" if st.running else "Off"
 
     @property
     def extra_state_attributes(self) -> dict | None:

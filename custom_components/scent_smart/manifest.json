@@ -1,17 +1,14 @@
 {
   "domain": "scent_smart",
   "name": "Scent Smart",
-  "version": "0.1.0",
-  "codeowners": ["@custom"],
+  "version": "0.1.1",
+  "codeowners": ["@megahitz"],
   "config_flow": true,
-  "dependencies": [],
-  "documentation": "https://github.com/local/scent_smart",
+  "dependencies": ["bluetooth"],
+  "documentation": "https://github.com/megahitz/scent-smart",
   "integration_type": "device",
   "iot_class": "assumed_state",
-  "issue_tracker": "https://github.com/local/scent_smart/issues",
+  "issue_tracker": "https://github.com/megahitz/scent-smart/issues",
   "requirements": ["bleak>=0.21.0"],
-  "bluetooth": [
-    {"local_name": "Scent-*"}
-  ],
   "loggers": ["bleak"]
 }

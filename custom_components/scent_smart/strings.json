@@ -11,7 +11,7 @@
       }
     },
     "error": {
-      "invalid_ble_address": "Invalid Bluetooth address (expected 6 pairs of hex digits, e.g. 54:6C:50:5E:C3:6F)."
+      "invalid_ble_address": "Invalid Bluetooth address (expected 6 pairs of hex digits, e.g. AA:BB:CC:DD:EE:FF)."
     },
     "abort": {
       "already_configured": "This device is already configured."

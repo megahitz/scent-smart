@@ -11,7 +11,7 @@
       }
     },
     "error": {
-      "invalid_ble_address": "Endereço Bluetooth inválido (esperado 6 pares hex, ex.: 54:6C:50:5E:C3:6F)."
+      "invalid_ble_address": "Endereço Bluetooth inválido (esperado 6 pares hex, ex.: AA:BB:CC:DD:EE:FF)."
     },
     "abort": {
       "already_configured": "Este aparelho já está configurado."

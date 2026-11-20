@@ -56,10 +56,3 @@ class ScentSmartEntity(CoordinatorEntity[ScentSmartCoordinator]):
     @property
     def state_obj(self):
         return self.coordinator.data
-
-    @property
-    def active_serial(self) -> int:
-        st = self.state_obj
-        if st and st.active_serial:
-            return st.active_serial
-        return int(self._entry.options.get("active_program", 1))

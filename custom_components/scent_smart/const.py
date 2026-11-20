@@ -40,7 +40,7 @@ TIMER_TAIL = 0x00000001  # u32 LE constant tail (validated)
 # Mode bitmask meaning "every day"
 TIMER_MODE_EVERY_DAY = 0x00FF
 
-# Device limits (validated end-to-end via the official app)
+# Device limits verified against the tested device
 RUN_MIN = 5
 RUN_MAX = 200
 RUN_STEP = 5
